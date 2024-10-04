@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT PCD</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h1>CHAT PCD</h1>
+        <div class="messages">
+            <% if (response) { %>
+                <div class="chat-message user">
+                    <p><strong>Você:</strong> <%= prompt %></p>
+                </div>
+                <% if (file_url) { %>
+                    <div class="chat-message file">
+                        <p><strong>Arquivo enviado:</strong></p>
+                        <img src="<%= file_url %>" alt="Imagem enviada" style="max-width: 100%; height: auto;">
+                    </div>
+                <% } %>
+                <div class="chat-message ai">
+                    <p><strong>IA:</strong> <%= response %></p>
+                </div>
+            <% } %>
+        </div>
+
+        <form id="chat-form" action="/" method="POST" enctype="multipart/form-data">
+            <div class="input-container">
+                <input type="text" id="prompt" name="prompt" placeholder="Digite seu prompt..." required>
+                <label for="file" class="file-icon">📎</label>
+                <input type="file" id="file" name="file" accept="image/*,video/*" style="display: none;">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+
+        <div id="file-selected-message" style="display: none; color: green;">
+            Arquivo selecionado: <span id="file-name"></span>
+        </div>
+
+        <div id="loading-message" style="display:none;">
+            <p>Analisando...</p>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

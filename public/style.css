@@ -1,0 +1,98 @@
+html, body {
+    height: 100%; /* Definir altura de 100% para html e body */
+    margin: 0; /* Remover margens padrão */
+}
+
+body {
+    font-family: 'Verdana', sans-serif; /* Mudança de fonte */
+    background-color: #121212; /* Cor de fundo escura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    max-width: 700px; /* Largura máxima da caixa de chat */
+    width: 100%; /* Largura total */
+    background: #1e1e1e; /* Cor de fundo da caixa de chat */
+    padding: 30px; /* Preenchimento da caixa */
+    border-radius: 15px; /* Raio da borda */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra da caixa */
+    display: flex;
+    flex-direction: column; /* Alinhar os elementos em coluna */
+    height: 90vh; /* Definir altura da caixa do chat */
+}
+
+h1 {
+    color: #ffffff; /* Cor de texto em branco */
+    text-align: center; /* Centralizar o título */
+    font-size: 2em; /* Tamanho do título */
+    margin-bottom: 20px; /* Margem inferior do título */
+}
+
+.messages {
+    flex: 1; /* Permitir que a área de mensagens ocupe o espaço restante */
+    overflow-y: auto; /* Habilitar rolagem vertical */
+    padding: 10px; /* Preenchimento da área de mensagens */
+    border: 1px solid #444; /* Borda da área de mensagens */
+    border-radius: 8px; /* Raio da borda */
+    background-color: #1c1c1c; /* Cor de fundo das mensagens */
+    margin-bottom: 20px; /* Margem inferior da área de mensagens */
+}
+
+.chat-message {
+    margin-bottom: 15px; /* Margem inferior das mensagens */
+    padding: 12px; /* Preenchimento das mensagens */
+    border-radius: 8px; /* Raio da borda das mensagens */
+    color: #ffffff; /* Texto em branco */
+    max-width: 70%; /* Largura máxima das mensagens */
+    word-wrap: break-word; /* Quebra de linha em palavras longas */
+}
+
+.chat-message.user {
+    background-color: #007bff; /* Cor de fundo para mensagens do usuário */
+    align-self: flex-end; /* Alinhar à direita */
+}
+
+.chat-message.ai {
+    background-color: #444; /* Cor de fundo para mensagens da IA */
+    align-self: flex-start; /* Alinhar à esquerda */
+}
+
+.input-container {
+    display: flex; /* Flexbox para alinhar o campo de texto e o ícone */
+    align-items: center; /* Alinhar verticalmente */
+    margin-top: 10px; /* Margem superior */
+}
+
+input[type="text"] {
+    flex: 1; /* Preencher o espaço disponível */
+    padding: 10px; /* Preenchimento do campo de texto */
+    border: 1px solid #444; /* Borda mais clara */
+    border-radius: 6px; /* Raio da borda */
+    font-size: 16px; /* Tamanho da fonte */
+    background-color: #1e1e1e; /* Fundo do campo de texto */
+    color: #ffffff; /* Texto em branco */
+}
+
+input[type="file"] {
+    display: none; /* Oculta o campo de arquivo */
+}
+
+.file-icon {
+    cursor: pointer; /* Cursor de mão para o ícone */
+    margin-left: 10px; /* Margem à esquerda do ícone */
+    color: #007bff; /* Cor do ícone */
+    font-size: 20px; /* Tamanho do ícone */
+}
+
+input[type="submit"] {
+    display: none; /* Oculta o botão de envio */
+}
+
+#loading-message {
+    color: #ff9800; /* Cor do texto de loading */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px; /* Margem superior */
+}
